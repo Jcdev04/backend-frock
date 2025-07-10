@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		railway.toml = railway.toml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frock-backend.test", "Frock-backend.test\Frock-backend.test.csproj", "{6B9BAF2B-B61A-471F-BC9D-366B6513BCE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{D40B5E1D-5849-441D-9222-0C269DFFFB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D40B5E1D-5849-441D-9222-0C269DFFFB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D40B5E1D-5849-441D-9222-0C269DFFFB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B9BAF2B-B61A-471F-BC9D-366B6513BCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9BAF2B-B61A-471F-BC9D-366B6513BCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9BAF2B-B61A-471F-BC9D-366B6513BCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9BAF2B-B61A-471F-BC9D-366B6513BCE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
