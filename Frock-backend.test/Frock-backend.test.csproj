@@ -23,4 +23,14 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IAM\" />
+    <Folder Include="transport company\" />
+    <Folder Include="routes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Frock-backend\Frock-backend.csproj" />
+  </ItemGroup>
+
 </Project>
