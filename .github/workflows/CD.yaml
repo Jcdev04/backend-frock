@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [ main, release/* ]  # Solo despliega en main o release
+    branches: [ main ]  # Solo despliega en main o release
 
 jobs:
   deploy:
