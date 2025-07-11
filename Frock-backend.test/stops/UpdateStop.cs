@@ -25,8 +25,23 @@ public class UpdateStopSteps
     public async Task WhenEnvioId(Table table)
     {
         var row = table.Rows[0];
+        int stopId = int.Parse(row["id"]);
+
+        // 1. Prepara un objeto Stop simulado (fake) con datos originales
+        var fakeStop = new Stop(
+            stopId,
+            "Paradero Original",  // nombre original, será reemplazado
+            "Direccion original",
+            int.Parse(row["fkIdCompany"]),
+            int.Parse(row["fkIdDistrict"])
+        );
+
+        // 2. Configura el mock del repositorio para retornar el stop simulado
+        _repo.Setup(r => r.FindByIdAsync(stopId)).ReturnsAsync(fakeStop);
+
+        // 3. Crea el comando con los nuevos datos que vienen de la tabla de tu BDD
         _cmd = new UpdateStopCommand(
-            int.Parse(row["id"]),
+            stopId,
             row["name"],
             row["googleMapsUrl"],
             row["imageUrl"],
@@ -36,12 +51,15 @@ public class UpdateStopSteps
             row["reference"],
             int.Parse(row["fkIdDistrict"])
         );
+
+        // 4. Llama a tu servicio normalmente
         _result = await _service.Handle(_cmd);
     }
-    
+
+
     [Then(@"el sistema actualiza el paradero")]
     public void ThenStopDeleted()
-        => Assert.Null(_result);
+        => Assert.NotNull(_result);
     
     [Then(@"los campos del paradero coinciden exactamente con los nuevos datos")]
     public void ThenFieldsMatch()

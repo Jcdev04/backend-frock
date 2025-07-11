@@ -108,11 +108,11 @@ this.ScenarioInitialize(scenarioInfo);
                             "logoUrl",
                             "fkIdUser"});
                 table4.AddRow(new string[] {
-                            "1",
+                            "2",
                             "Test Companie",
                             "https://transportesostenible.com.pe/wp-content/uploads/2025/03/paradero-aerodirec" +
                                 "to.jpg",
-                            "1"});
+                            "0"});
 #line 7
     testRunner.When("envio el id de la compañia con los datos a modificar:", ((string)(null)), table4, "When ");
 #line hidden

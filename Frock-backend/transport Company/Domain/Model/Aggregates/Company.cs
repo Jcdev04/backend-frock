@@ -23,6 +23,13 @@ namespace Frock_backend.transport_Company.Domain.Model.Aggregates
             FkIdUser = command.FkIdUser;
         }
 
+       public Company(int id, string name, string logoUrl, int fkIdUser)
+        {
+            Id = id;
+            Name = name;
+            LogoUrl = logoUrl;
+            FkIdUser = fkIdUser;
+        }
         public Company(UpdateCompanyCommand command)
         {
             Id = command.Id;

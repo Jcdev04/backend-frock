@@ -32,10 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="routes\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Frock-backend\Frock-backend.csproj" />
   </ItemGroup>
 

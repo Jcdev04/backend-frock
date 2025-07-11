@@ -25,12 +25,30 @@ public class UpdateCompanieSteps
     public async Task WhenEnvioDatos(Table table)
     {
         var row = table.Rows[0];
+        int companyId = int.Parse(row["id"]);
+
+        // Prepara un objeto simulado (fake) con los datos originales
+        var fakeCompany = new Company
+        (
+            companyId,
+            "Empresa Original",  // nombre original, será sobreescrito por el update
+            "logo.png",          // logo original, será sobreescrito por el update
+            int.Parse(row["fkIdUser"])
+        );
+
+        // Configura el mock para devolver el objeto cuando se busque por ID
+        _repo.Setup(r => r.FindByIdAsync(companyId)).ReturnsAsync(fakeCompany);
+
+        // (Opcional) Si tu servicio guarda cambios, puedes mockear SaveChanges/Update si aplica
+
+        // Crea el comando con los nuevos datos (del test)
         _cmd = new UpdateCompanyCommand(
-            int.Parse(row["id"]),
+            companyId,
             row["name"],
             row["logoUrl"],
             int.Parse(row["fkIdUser"])
         );
+
         _result = await _service.Handle(_cmd);
     }
 
