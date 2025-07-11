@@ -102,12 +102,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
     testRunner.Given("no existe el paradero a eliminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "id"});
-                table5.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "1"});
 #line 8
-    testRunner.When("envio el id del paradero:", ((string)(null)), table5, "When ");
+    testRunner.When("envio el id del paradero:", ((string)(null)), table6, "When ");
 #line hidden
 #line 11
     testRunner.Then("el sistema elimina el paradero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

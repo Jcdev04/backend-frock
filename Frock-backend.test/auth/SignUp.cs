@@ -2,6 +2,7 @@
 using Frock_backend.IAM.Application.Internal.OutboundServices;
 using Frock_backend.IAM.Domain.Model.Aggregates;
 using Frock_backend.IAM.Domain.Model.Commands;
+using Frock_backend.IAM.Domain.Model.ValueObjects;
 using Frock_backend.IAM.Domain.Repositories;
 using Frock_backend.shared.Domain.Repositories;
 using Moq;
@@ -16,7 +17,6 @@ public class SignUpSteps
     private readonly Mock<IHashingService> _hashingService = new();
     private UserCommandService _service;
     private SignUpCommand _cmd;
-    private User _result;
 
     [Given(@"no existe cuenta a crear")]
     public void GivenNoExistingCompanie()
@@ -28,27 +28,24 @@ public class SignUpSteps
     public async Task WhenEnvioDatos(Table table)
     {
         var row = table.Rows[0];
-        _cmd = new SignUpCommand(
-            row["email"],
-            row["username"],
-            row["password"],
-            int.Parse(row["role"])
-        );
-        _result = await _service.Handle(_cmd);
+        _cmd = new SignUpCommand {
+            Email = row["email"],
+            Username=row["username"],
+            Password = row["password"],
+            Role = (Role)int.Parse(row["role"])
+        };
+        await _service.Handle(_cmd);
     }
 
-    [Then(@"el sistema crea una nueva cuenta")]
-    public void ThenUserCreated()
-        => Assert.NotNull(_result);
-
-    [Then(@"la cuenta tiene un Id numérico válido")]
-    public void ThenValidId()
-        => Assert.True(_result.Id > -1);
-
-    [Then(@"el nombre y correo de la cuenta creada coincide con lo ingresado")]
-    public void ThenFieldsMatch()
+    [Then(@"el sistema no devuelve error")]
+    public void ThenNoExceptionThrown()
     {
-        Assert.Equal(_cmd.Email, _result.Email);
-        Assert.Equal(_cmd.Username, _result.Username);
+        // No necesitas hacer nada: si hay excepción, la prueba falla automáticamente
+    }
+
+    [Then(@"el repositorio guarda la nueva cuenta")]
+    public void ThenRepositoryCalled()
+    {
+        _repo.Verify(r => r.AddAsync(It.IsAny<User>()), Times.Once);
     }
 }

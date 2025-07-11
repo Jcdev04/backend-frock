@@ -40,8 +40,8 @@ namespace Frock_backend.test.Auth
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "auth", "Iniciar sesion", "    Como usuario quiero poder inciar sesion en mi cuenta creada\r\n    Quiero incia" +
-                    "r sesion en mi cuenta\r\n    Para poder usar los servicios", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "auth", "Iniciar sesión", "  Como usuario quiero poder iniciar sesión en mi cuenta creada\r\n  Para poder usar" +
+                    " los servicios", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,16 +81,16 @@ namespace Frock_backend.test.Auth
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Acceso exitoso de la cuenta")]
-        [Xunit.TraitAttribute("FeatureTitle", "Iniciar sesion")]
-        [Xunit.TraitAttribute("Description", "Acceso exitoso de la cuenta")]
-        public void AccesoExitosoDeLaCuenta()
+        [Xunit.SkippableFactAttribute(DisplayName="Acceso exitoso a la cuenta")]
+        [Xunit.TraitAttribute("FeatureTitle", "Iniciar sesión")]
+        [Xunit.TraitAttribute("Description", "Acceso exitoso a la cuenta")]
+        public void AccesoExitosoALaCuenta()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Acceso exitoso de la cuenta", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
-this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Acceso exitoso a la cuenta", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 5
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -99,20 +99,23 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
     testRunner.Given("no existe cuenta a acceder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "email",
                             "password"});
                 table1.AddRow(new string[] {
-                            "user@email.com",
-                            "password1234"});
-#line 8
+                            "user@test.com",
+                            "user123"});
+#line 7
     testRunner.When("envío los datos para acceder:", ((string)(null)), table1, "When ");
 #line hidden
-#line 11
+#line 10
     testRunner.Then("accedo a mi cuenta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 11
+    testRunner.And("el sistema retorna el id, username, role y token válidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

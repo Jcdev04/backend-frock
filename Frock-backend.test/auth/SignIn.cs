@@ -2,6 +2,7 @@
 using Frock_backend.IAM.Application.Internal.OutboundServices;
 using Frock_backend.IAM.Domain.Model.Aggregates;
 using Frock_backend.IAM.Domain.Model.Commands;
+using Frock_backend.IAM.Domain.Model.ValueObjects;
 using Frock_backend.IAM.Domain.Repositories;
 using Frock_backend.shared.Domain.Repositories;
 using Moq;
@@ -33,10 +34,31 @@ public class SignInSteps
             row["email"],
             row["password"]
         );
+        var fakeUser = new User(
+            row["email"],
+            "user1", // o row["username"] si tienes ese dato en tu tabla de test
+            "hashed-password", // simula el hash que esperas
+            Role.Traveller     // o el rol que desees probar
+        );
+        // Configura los mocks
+        _repo.Setup(r => r.FindByEmailAsync(row["email"])).ReturnsAsync(fakeUser);
+        _hashingService.Setup(h => h.VerifyPassword(row["password"], fakeUser.PasswordHash)).Returns(true);
+        _tokenService.Setup(t => t.GenerateToken(It.IsAny<User>())).Returns("fake-jwt-token");
+
         (_user, _token) = await _service.Handle(_cmd);
     }
 
     [Then(@"accedo a mi cuenta")]
     public void ThenUserAcceded()
-        => Assert.NotNull(_user);
+    => Assert.NotNull(_user);
+
+    [Then(@"el sistema retorna el id, username, role y token válidos")]
+    public void ThenResponseFieldsAreValid()
+    {
+        Assert.True(_user.Id > -1);
+        Assert.False(string.IsNullOrWhiteSpace(_user.Username));
+        Assert.True(Enum.IsDefined(typeof(Role), _user.Role));
+        Assert.False(string.IsNullOrWhiteSpace(_token));
+    }
+
 }

@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
     testRunner.Given("no existe un paradero llamado \"Test Stop\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "name",
                             "googleMapsUrl",
                             "imageUrl",
@@ -111,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "address",
                             "reference",
                             "fkIdDistrict"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Test Stop",
                             "https://maps.google.com/test-stop",
                             "https://transportesostenible.com.pe/wp-content/uploads/2025/03/paradero-aerodirec" +
@@ -122,7 +122,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Near the big tree",
                             "1"});
 #line 8
-    testRunner.When("envío los datos del paradero:", ((string)(null)), table4, "When ");
+    testRunner.When("envío los datos del paradero:", ((string)(null)), table5, "When ");
 #line hidden
 #line 11
     testRunner.Then("el sistema crea un nuevo paradero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

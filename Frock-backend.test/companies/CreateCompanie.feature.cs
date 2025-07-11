@@ -101,16 +101,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
     testRunner.Given("no existe la compañia a crear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "name",
                             "logoUrl",
                             "fkIdUser"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "Test Companie",
                             "https://maps.google.com/test-stop",
                             "1"});
 #line 7
-    testRunner.When("envío los datos de la compañia:", ((string)(null)), table2, "When ");
+    testRunner.When("envío los datos de la compañia:", ((string)(null)), table3, "When ");
 #line hidden
 #line 10
     testRunner.Then("el sistema crea la compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

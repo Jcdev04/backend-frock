@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="transport company\**" />
+    <EmbeddedResource Remove="transport company\**" />
+    <None Remove="transport company\**" />
+    <SpecFlowFeatureFiles Remove="transport company\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="transport company\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="xunit" Version="2.9.2" />
@@ -24,8 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="IAM\" />
-    <Folder Include="transport company\" />
     <Folder Include="routes\" />
   </ItemGroup>
 

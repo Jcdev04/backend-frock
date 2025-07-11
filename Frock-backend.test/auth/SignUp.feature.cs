@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Frock_backend.test.Stops
+namespace Frock_backend.test.Auth
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Frock_backend.test.Stops
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ObtenerTodosLosParaderosPorIdDeCompaniaFeature : object, Xunit.IClassFixture<ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FixtureData>, System.IDisposable
+    public partial class CrearCuentaFeature : object, Xunit.IClassFixture<CrearCuentaFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Frock_backend.test.Stops
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "GetAllStopsByFkIdCompany.feature"
+#line 1 "SignUp.feature"
 #line hidden
         
-        public ObtenerTodosLosParaderosPorIdDeCompaniaFeature(ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CrearCuentaFeature(CrearCuentaFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,7 @@ namespace Frock_backend.test.Stops
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "stops", "Obtener todos los paraderos por id de compañia", "    Como gestor de la empresa de transporte  \r\n    Quiero poder obtener todos los" +
-                    " paraderos que maneja una compañia ", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "auth", "Crear cuenta", "  Como usuario quiero poder crear una cuenta\r\n  Para poder usar los servicios", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,16 +80,16 @@ namespace Frock_backend.test.Stops
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Obtener paraderos por id de compañia")]
-        [Xunit.TraitAttribute("FeatureTitle", "Obtener todos los paraderos por id de compañia")]
-        [Xunit.TraitAttribute("Description", "Obtener paraderos por id de compañia")]
-        public void ObtenerParaderosPorIdDeCompania()
+        [Xunit.SkippableFactAttribute(DisplayName="Creación exitosa de la cuenta")]
+        [Xunit.TraitAttribute("FeatureTitle", "Crear cuenta")]
+        [Xunit.TraitAttribute("Description", "Creación exitosa de la cuenta")]
+        public void CreacionExitosaDeLaCuenta()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Obtener paraderos por id de compañia", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creación exitosa de la cuenta", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
-this.ScenarioInitialize(scenarioInfo);
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -100,17 +99,26 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
-    testRunner.Given("no existe el paradero a obtener por id de compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("no existe cuenta a crear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                            "id"});
-                table7.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "email",
+                            "username",
+                            "password",
+                            "role"});
+                table2.AddRow(new string[] {
+                            "user@email.com",
+                            "user1",
+                            "password1234",
                             "1"});
 #line 7
-    testRunner.When("envio el id de la compañia:", ((string)(null)), table7, "When ");
+    testRunner.When("envío los datos para la nueva cuenta:", ((string)(null)), table2, "When ");
 #line hidden
 #line 10
-    testRunner.Then("el sistema muestra todos los parederos de la compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("el sistema no devuelve error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 11
+    testRunner.And("el repositorio guarda la nueva cuenta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -123,12 +131,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FeatureSetup();
+                CrearCuentaFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FeatureTearDown();
+                CrearCuentaFeature.FeatureTearDown();
             }
         }
     }

@@ -102,19 +102,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
     testRunner.Given("no existe la compañia a modificar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "id",
                             "name",
                             "logoUrl",
                             "fkIdUser"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "1",
                             "Test Companie",
                             "https://transportesostenible.com.pe/wp-content/uploads/2025/03/paradero-aerodirec" +
                                 "to.jpg",
                             "1"});
 #line 7
-    testRunner.When("envio el id de la compañia con los datos a modificar:", ((string)(null)), table3, "When ");
+    testRunner.When("envio el id de la compañia con los datos a modificar:", ((string)(null)), table4, "When ");
 #line hidden
 #line 10
     testRunner.Then("el sistema actualiza la compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
