@@ -37,6 +37,9 @@
     <Compile Update="stops\DeleteStop.feature.cs">
       <DependentUpon>DeleteStop.feature</DependentUpon>
     </Compile>
+    <Compile Update="stops\GetAllStopsByFkIdCompany.feature.cs">
+      <DependentUpon>GetAllStopsByFkIdCompany.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
