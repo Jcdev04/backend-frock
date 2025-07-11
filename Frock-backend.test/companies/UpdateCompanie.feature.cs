@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Frock_backend.test.Stops
+namespace Frock_backend.test.Companies
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Frock_backend.test.Stops
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class EliminarUnParaderoFeature : object, Xunit.IClassFixture<EliminarUnParaderoFeature.FixtureData>, System.IDisposable
+    public partial class ModificarUnaCompaniaFeature : object, Xunit.IClassFixture<ModificarUnaCompaniaFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Frock_backend.test.Stops
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "DeleteStop.feature"
+#line 1 "UpdateCompanie.feature"
 #line hidden
         
-        public EliminarUnParaderoFeature(EliminarUnParaderoFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ModificarUnaCompaniaFeature(ModificarUnaCompaniaFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,8 @@ namespace Frock_backend.test.Stops
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "stops", "Eliminar un paradero", "    Como gestor de la empresa de transporte  \r\n    Quiero poder eliminar un parad" +
-                    "ero  \r\n    Para poder quitar las rutas que no se usan", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "companies", "Modificar una compañia", "    Como dueño de una compañia\r\n    Quiero poder modificar los datos de mi compañ" +
+                    "ia", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,15 +81,15 @@ namespace Frock_backend.test.Stops
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Eliminacion exitosa de un paradero")]
-        [Xunit.TraitAttribute("FeatureTitle", "Eliminar un paradero")]
-        [Xunit.TraitAttribute("Description", "Eliminacion exitosa de un paradero")]
-        public void EliminacionExitosaDeUnParadero()
+        [Xunit.SkippableFactAttribute(DisplayName="Modificacion exitosa de una compañia")]
+        [Xunit.TraitAttribute("FeatureTitle", "Modificar una compañia")]
+        [Xunit.TraitAttribute("Description", "Modificacion exitosa de una compañia")]
+        public void ModificacionExitosaDeUnaCompania()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Eliminacion exitosa de un paradero", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Modificacion exitosa de una compañia", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,18 +99,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
-    testRunner.Given("no existe el paradero a eliminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+    testRunner.Given("no existe la compañia a modificar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                            "id"});
-                table4.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "id",
+                            "name",
+                            "logoUrl",
+                            "fkIdUser"});
+                table2.AddRow(new string[] {
+                            "1",
+                            "Test Companie",
+                            "https://transportesostenible.com.pe/wp-content/uploads/2025/03/paradero-aerodirec" +
+                                "to.jpg",
                             "1"});
-#line 8
-    testRunner.When("envio el id del paradero:", ((string)(null)), table4, "When ");
+#line 7
+    testRunner.When("envio el id de la compañia con los datos a modificar:", ((string)(null)), table2, "When ");
+#line hidden
+#line 10
+    testRunner.Then("el sistema actualiza la compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
-    testRunner.Then("el sistema elimina el paradero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("los campos de la compañia coinciden exactamente con los nuevos datos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -123,12 +133,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                EliminarUnParaderoFeature.FeatureSetup();
+                ModificarUnaCompaniaFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                EliminarUnParaderoFeature.FeatureTearDown();
+                ModificarUnaCompaniaFeature.FeatureTearDown();
             }
         }
     }

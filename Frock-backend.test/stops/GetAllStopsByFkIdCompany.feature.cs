@@ -102,12 +102,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
     testRunner.Given("no existe el paradero a obtener por id de compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "id"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "1"});
 #line 7
-    testRunner.When("envio el id de la compañia:", ((string)(null)), table4, "When ");
+    testRunner.When("envio el id de la compañia:", ((string)(null)), table5, "When ");
 #line hidden
 #line 10
     testRunner.Then("el sistema muestra todos los parederos de la compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

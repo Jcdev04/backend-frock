@@ -43,6 +43,9 @@
     <Compile Update="companies\CreateCompanie.feature.cs">
       <DependentUpon>CreateCompanie.feature</DependentUpon>
     </Compile>
+    <Compile Update="companies\UpdateCompanie.feature.cs">
+      <DependentUpon>UpdateCompanie.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
