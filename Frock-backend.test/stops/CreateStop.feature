@@ -1,7 +1,7 @@
 ﻿Feature: Creación de paradero  
-  Como gestor de la empresa de transporte  
-  Quiero crear un nuevo paradero  
-  Para poder asociarlo después a rutas
+    Como gestor de la empresa de transporte  
+    Quiero crear un nuevo paradero  
+    Para poder asociarlo después a rutas
 
 Scenario: Creación exitosa de un paradero
     Given no existe un paradero llamado "Test Stop"

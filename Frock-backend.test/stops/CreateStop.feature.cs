@@ -40,8 +40,8 @@ namespace Frock_backend.test.Stops
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "stops", "Creación de paradero", "  Como gestor de la empresa de transporte  \r\n  Quiero crear un nuevo paradero  \r\n" +
-                    "  Para poder asociarlo después a rutas", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "stops", "Creación de paradero", "    Como gestor de la empresa de transporte  \r\n    Quiero crear un nuevo paradero" +
+                    "  \r\n    Para poder asociarlo después a rutas", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
