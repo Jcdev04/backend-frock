@@ -26,7 +26,7 @@ public class UpdateCompanieSteps
     {
         var row = table.Rows[0];
         int companyId = int.Parse(row["id"]);
-
+        // nuevo 
         // Prepara un objeto simulado (fake) con los datos originales
         var fakeCompany = new Company
         (
