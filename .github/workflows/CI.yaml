@@ -1,0 +1,31 @@
+﻿name: CI (.NET Core)
+
+on:
+  push:
+    branches: [ main, release]
+  pull_request:
+    branches: [ main, release/* ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build & Test
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 9.x
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.x'
+
+      - name: dotnet restore
+        run: dotnet restore ./Frock-backend.sln
+
+      - name: dotnet build
+        run: dotnet build ./Frock-backend.sln --configuration Release --no-restore
+
+      - name: dotnet test
+        working-directory: Frock-backend.test
+        run: dotnet test Frock-backend.test.csproj --no-build --configuration Release
