@@ -4,7 +4,7 @@
     Para poder quitar las rutas que no se usan
 
 Scenario: Eliminacion exitosa de un paradero
-    Given no existe el paradero
+    Given no existe el paradero a eliminar
     When envio el id del paradero:
     | id |
     | 1  |

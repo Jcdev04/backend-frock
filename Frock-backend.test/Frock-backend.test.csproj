@@ -33,4 +33,10 @@
     <ProjectReference Include="..\Frock-backend\Frock-backend.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="stops\DeleteStop.feature.cs">
+      <DependentUpon>DeleteStop.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

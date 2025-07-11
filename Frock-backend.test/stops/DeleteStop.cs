@@ -15,7 +15,7 @@ public class DeleteStopSteps
     private DeleteStopCommand _cmd;
     private Stop _result;
 
-    [Given(@"no existe el paradero")]
+    [Given(@"no existe el paradero a eliminar")]
     public void GivenNoExisteStop()
     {
         _service = new StopCommandService(_repo.Object, _uow.Object);
