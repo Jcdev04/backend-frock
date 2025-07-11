@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Frock_backend.test.Stops
+namespace Frock_backend.test.Auth
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Frock_backend.test.Stops
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ObtenerTodosLosParaderosPorIdDeCompaniaFeature : object, Xunit.IClassFixture<ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FixtureData>, System.IDisposable
+    public partial class IniciarSesionFeature : object, Xunit.IClassFixture<IniciarSesionFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Frock_backend.test.Stops
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "GetAllStopsByFkIdCompany.feature"
+#line 1 "SignIn.feature"
 #line hidden
         
-        public ObtenerTodosLosParaderosPorIdDeCompaniaFeature(ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public IniciarSesionFeature(IniciarSesionFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,8 @@ namespace Frock_backend.test.Stops
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "stops", "Obtener todos los paraderos por id de compañia", "    Como gestor de la empresa de transporte  \r\n    Quiero poder obtener todos los" +
-                    " paraderos que maneja una compañia ", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "auth", "Iniciar sesion", "    Como usuario quiero poder inciar sesion en mi cuenta creada\r\n    Quiero incia" +
+                    "r sesion en mi cuenta\r\n    Para poder usar los servicios", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,15 +81,15 @@ namespace Frock_backend.test.Stops
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Obtener paraderos por id de compañia")]
-        [Xunit.TraitAttribute("FeatureTitle", "Obtener todos los paraderos por id de compañia")]
-        [Xunit.TraitAttribute("Description", "Obtener paraderos por id de compañia")]
-        public void ObtenerParaderosPorIdDeCompania()
+        [Xunit.SkippableFactAttribute(DisplayName="Acceso exitoso de la cuenta")]
+        [Xunit.TraitAttribute("FeatureTitle", "Iniciar sesion")]
+        [Xunit.TraitAttribute("Description", "Acceso exitoso de la cuenta")]
+        public void AccesoExitosoDeLaCuenta()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Obtener paraderos por id de compañia", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Acceso exitoso de la cuenta", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,18 +99,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-    testRunner.Given("no existe el paradero a obtener por id de compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "id"});
-                table6.AddRow(new string[] {
-                            "1"});
 #line 7
-    testRunner.When("envio el id de la compañia:", ((string)(null)), table6, "When ");
+    testRunner.Given("no existe cuenta a acceder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 10
-    testRunner.Then("el sistema muestra todos los parederos de la compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "email",
+                            "password"});
+                table1.AddRow(new string[] {
+                            "user@email.com",
+                            "password1234"});
+#line 8
+    testRunner.When("envío los datos para acceder:", ((string)(null)), table1, "When ");
+#line hidden
+#line 11
+    testRunner.Then("accedo a mi cuenta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -123,12 +125,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FeatureSetup();
+                IniciarSesionFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ObtenerTodosLosParaderosPorIdDeCompaniaFeature.FeatureTearDown();
+                IniciarSesionFeature.FeatureTearDown();
             }
         }
     }

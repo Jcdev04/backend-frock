@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
     testRunner.Given("no existe el paradero a modificar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "id",
                             "name",
                             "googleMapsUrl",
@@ -112,7 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "address",
                             "reference",
                             "fkIdDistrict"});
-                table6.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "1",
                             "Test Stop",
                             "https://maps.google.com/test-stop",
@@ -124,7 +124,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Near the big tree",
                             "1"});
 #line 8
-    testRunner.When("envio el id del paradero con los datos a modificar:", ((string)(null)), table6, "When ");
+    testRunner.When("envio el id del paradero con los datos a modificar:", ((string)(null)), table7, "When ");
 #line hidden
 #line 11
     testRunner.Then("el sistema actualiza el paradero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

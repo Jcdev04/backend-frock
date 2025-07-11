@@ -46,6 +46,9 @@
     <Compile Update="companies\UpdateCompanie.feature.cs">
       <DependentUpon>UpdateCompanie.feature</DependentUpon>
     </Compile>
+    <Compile Update="auth\SignIn.feature.cs">
+      <DependentUpon>SignIn.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
