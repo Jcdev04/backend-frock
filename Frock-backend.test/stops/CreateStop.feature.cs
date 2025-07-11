@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
     testRunner.Given("no existe un paradero llamado \"Test Stop\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "name",
                             "googleMapsUrl",
                             "imageUrl",
@@ -111,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "address",
                             "reference",
                             "fkIdDistrict"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Test Stop",
                             "https://maps.google.com/test-stop",
                             "https://transportesostenible.com.pe/wp-content/uploads/2025/03/paradero-aerodirec" +
@@ -122,15 +122,15 @@ this.ScenarioInitialize(scenarioInfo);
                             "Near the big tree",
                             "1"});
 #line 8
-    testRunner.When("envío los datos del paradero:", ((string)(null)), table1, "When ");
+    testRunner.When("envío los datos del paradero:", ((string)(null)), table2, "When ");
 #line hidden
-#line 12
+#line 11
     testRunner.Then("el sistema crea un nuevo paradero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 13
+#line 12
     testRunner.And("el paradero tiene un Id numérico válido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 13
     testRunner.And("los campos del paradero coinciden exactamente con los enviados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

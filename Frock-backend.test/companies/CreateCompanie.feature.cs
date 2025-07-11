@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Frock_backend.test.Stops
+namespace Frock_backend.test.Companies
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Frock_backend.test.Stops
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ModificarUnParaderoFeature : object, Xunit.IClassFixture<ModificarUnParaderoFeature.FixtureData>, System.IDisposable
+    public partial class CreacionDeCompaniaFeature : object, Xunit.IClassFixture<CreacionDeCompaniaFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Frock_backend.test.Stops
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "UpdateStop.feature"
+#line 1 "CreateCompanie.feature"
 #line hidden
         
-        public ModificarUnParaderoFeature(ModificarUnParaderoFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CreacionDeCompaniaFeature(CreacionDeCompaniaFeature.FixtureData fixtureData, Frock_backend_test_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,7 @@ namespace Frock_backend.test.Stops
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "stops", "Modificar un paradero", "    Como gestor de la empresa de transporte  \r\n    Quiero poder modificar un para" +
-                    "dero  \r\n    Para poder actualizar la ruta", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "companies", "Creación de compañia", "    Como dueño de una empresa de transporte  \r\n    Quiero crear mi compañia", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,15 +80,15 @@ namespace Frock_backend.test.Stops
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Modificacion exitosa de un paradero")]
-        [Xunit.TraitAttribute("FeatureTitle", "Modificar un paradero")]
-        [Xunit.TraitAttribute("Description", "Modificacion exitosa de un paradero")]
-        public void ModificacionExitosaDeUnParadero()
+        [Xunit.SkippableFactAttribute(DisplayName="Creación exitosa de una comañia")]
+        [Xunit.TraitAttribute("FeatureTitle", "Creación de compañia")]
+        [Xunit.TraitAttribute("Description", "Creación exitosa de una comañia")]
+        public void CreacionExitosaDeUnaComania()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Modificacion exitosa de un paradero", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creación exitosa de una comañia", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -99,38 +98,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
-    testRunner.Given("no existe el paradero a modificar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+    testRunner.Given("no existe la compañia a crear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "id",
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "name",
-                            "googleMapsUrl",
-                            "imageUrl",
-                            "phone",
-                            "fkIdCompany",
-                            "address",
-                            "reference",
-                            "fkIdDistrict"});
-                table5.AddRow(new string[] {
-                            "1",
-                            "Test Stop",
+                            "logoUrl",
+                            "fkIdUser"});
+                table1.AddRow(new string[] {
+                            "Test Companie",
                             "https://maps.google.com/test-stop",
-                            "https://transportesostenible.com.pe/wp-content/uploads/2025/03/paradero-aerodirec" +
-                                "to.jpg",
-                            "123-456-7890",
-                            "2",
-                            "123 Test St, Test City, TC 12345",
-                            "Near the big tree",
                             "1"});
-#line 8
-    testRunner.When("envio el id del paradero con los datos a modificar:", ((string)(null)), table5, "When ");
+#line 7
+    testRunner.When("envío los datos de la compañia:", ((string)(null)), table1, "When ");
+#line hidden
+#line 10
+    testRunner.Then("el sistema crea la compañia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
-    testRunner.Then("el sistema actualiza el paradero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("la compañia tiene un Id numérico válido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
-    testRunner.And("los campos del paradero coinciden exactamente con los nuevos datos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("los campos de la compañia coinciden exactamente con los enviados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -143,12 +132,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ModificarUnParaderoFeature.FeatureSetup();
+                CreacionDeCompaniaFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ModificarUnParaderoFeature.FeatureTearDown();
+                CreacionDeCompaniaFeature.FeatureTearDown();
             }
         }
     }

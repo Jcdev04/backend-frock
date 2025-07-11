@@ -40,6 +40,9 @@
     <Compile Update="stops\GetAllStopsByFkIdCompany.feature.cs">
       <DependentUpon>GetAllStopsByFkIdCompany.feature</DependentUpon>
     </Compile>
+    <Compile Update="companies\CreateCompanie.feature.cs">
+      <DependentUpon>CreateCompanie.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>
